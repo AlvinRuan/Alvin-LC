@@ -12,8 +12,5 @@ class Solution:
             if n in hashmap:
                 return False
             hashmap.add(n)
-            newN = 0
-            for i in str(n):
-                newN += int(i)**2
-            n = newN
+            n = sum([int(i)**2 for i in str(n)])
         return True
