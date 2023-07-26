@@ -6,6 +6,5 @@ class Solution:
         for i in nums:
             if i in collection:
                 return True
-            else:
-                collection.add(i)
+            collection.add(i)
         return False
