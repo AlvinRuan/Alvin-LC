@@ -2,20 +2,11 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         
 
-        collection_of_anagrams = {}
-        
-        for i in strs:
-
-            sorts = "".join(sorted(i))
-
-            if sorts in collection_of_anagrams:
-                collection_of_anagrams[sorts] += [i]
-
-
+        result = {}
+        for s in strs:
+            key = str(sorted(s))
+            if key in result:
+                result[key] += [s]
             else:
-                collection_of_anagrams[sorts] = [i]
-
-        result = []
-        for i in collection_of_anagrams:
-            result.append(collection_of_anagrams[i])
-        return result
+                result[key] = [s]
+        return list(result.values())
