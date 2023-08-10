@@ -5,11 +5,6 @@ class Solution:
         right = len(nums)-1
         midpoint = None
         
-        if nums[left] == target:
-            return left
-        elif nums[right] == target:
-            return right
-
         
         while left <= right:
             midpoint = (right+left)//2
