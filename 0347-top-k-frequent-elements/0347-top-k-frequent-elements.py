@@ -23,7 +23,7 @@ class Solution:
         for i in collection:
         # reverse sort array
             result.append([collection[i], i])
-        # largest_to_smallest = sorted(result,key=,reverse=True)
+        
         largest_to_smallest = sorted(result, reverse=True)
 
         # another for loop decrementing the value of K
