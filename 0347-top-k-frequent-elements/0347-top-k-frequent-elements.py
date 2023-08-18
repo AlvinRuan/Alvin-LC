@@ -3,8 +3,8 @@ class Solution:
                 
         # initial a collection / hashmap
         
-        # if len(nums) == 1:
-        #     return nums[0]
+        if len(nums) == 1:
+            return [nums[0]]
         
         collection = {}
         for i in nums:
