@@ -3,36 +3,26 @@ class Solution:
                 
         # initial a collection / hashmap
         
+        # if len(nums) == 1:
+        #     return nums[0]
+        
         collection = {}
-        
-        # loop through the array of numbers
-        
         for i in nums:
-        # if number, doesn't exist, hashmap[number] = 1
-        
             if i in collection:
                 collection[i] += 1
             else:
                 collection[i] = 1
-        # else hashmap[number] += 1
+                
         
-        # loop through hashmap, and append numbers to empty array = result
+        flipped = []
+        for i in collection:
+            flipped.append([collection[i],i])
         
+        # sort array
+        sorted_array = sorted(flipped, reverse=True)
         result = []
         
-        for i in collection:
-        # reverse sort array
-            result.append([collection[i], i])
-        
-        largest_to_smallest = sorted(result, reverse=True)
-
-        # another for loop decrementing the value of K
-        
-        # appending each one to the result array
-        
-        resulting = []
-        
         for i in range(k):
-            resulting.append(largest_to_smallest[i][1])
-            
-        return resulting
+            result.append(sorted_array[i][1])
+        
+        return result
