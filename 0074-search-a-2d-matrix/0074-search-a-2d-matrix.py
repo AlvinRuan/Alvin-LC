@@ -3,6 +3,9 @@ class Solution:
         
         target_matrix = None
         
+        if len(matrix) == None:
+            return False
+        
         for i in matrix:
             if (target in i):
                 target_matrix = i
