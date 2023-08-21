@@ -1,11 +1,12 @@
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         
-        target_matrix = None
+        
         
         if len(matrix) == None:
             return False
         
+        target_matrix = None
         for i in matrix:
             if (target in i):
                 target_matrix = i
