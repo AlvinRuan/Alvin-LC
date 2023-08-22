@@ -14,13 +14,13 @@ class Solution:
             else:
                 collection[s[right]] = 1
                 
-            most_common = max(collection, key=collection.get)
-            check = right - left + 1 - collection[most_common]
+            most_common = max(collection.values())
+            check = right - left + 1 - most_common
             while check > k:
                 collection[s[left]] -= 1
                 left += 1
-                most_common = max(collection, key=collection.get)
-                check = right - left + 1 - collection[most_common]
+                most_common = max(collection.values())
+                check = right - left + 1 - most_common
             longest = max(longest, right-left+1)
             right += 1
         return longest
