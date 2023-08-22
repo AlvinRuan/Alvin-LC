@@ -14,7 +14,7 @@ class Solution:
             else:
                 collection[s[right]] = 1
             
-            maxf = max(maxf, max(collection.values()))
+            maxf = max(maxf, collection[s[right]])
             while right - left + 1 - maxf > k:
                 collection[s[left]] -= 1
                 left += 1
