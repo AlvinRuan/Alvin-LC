@@ -4,7 +4,7 @@ class Solution:
         collection = {}
         
         left, right, longest = 0,0,0
-        
+        maxf = 0
         # parse through the string, we add to the set, as long as the amount is not greater than k's value
 
         while right < len(s):
@@ -13,14 +13,13 @@ class Solution:
                 collection[s[right]] += 1
             else:
                 collection[s[right]] = 1
-                
-            most_common = max(collection.values())
-            check = right - left + 1 - most_common
-            while check > k:
+            
+            maxf = max(maxf, max(collection.values()))
+            while right - left + 1 - maxf > k:
                 collection[s[left]] -= 1
                 left += 1
-                most_common = max(collection.values())
-                check = right - left + 1 - most_common
+
             longest = max(longest, right-left+1)
             right += 1
+            
         return longest
