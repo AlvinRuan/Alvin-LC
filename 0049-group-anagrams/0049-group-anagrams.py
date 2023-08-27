@@ -1,13 +1,18 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        collection_of_anagrams = {}
+        
+        
+        collection = {}
+        
         for i in strs:
-            sorts = "".join(sorted(i))
-            if sorts in collection_of_anagrams:
-                collection_of_anagrams[sorts] += [i]
+            sorted_i = "".join(sorted(i))
+            if sorted_i in collection:
+                collection[sorted_i].append(i)
             else:
-                collection_of_anagrams[sorts] = [i]
+                collection[sorted_i] = [i]
+        
+        
         result = []
-        for i in collection_of_anagrams:
-            result.append(collection_of_anagrams[i])
+        for i in collection:
+            result.append(collection[i])
         return result
