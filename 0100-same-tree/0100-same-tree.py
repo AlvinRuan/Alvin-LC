@@ -8,11 +8,11 @@ class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
 
         
-        # if both tree are null, they're the same
+        # if both are none, return True
         if not p and not q:
             return True
         
-        # if either is null, they're not the same
+        # If one is none, return False
         if not p or not q:
             return False
         
