@@ -3,9 +3,8 @@ class Solution:
 
         collection = {}
 
-        for i in range(len(nums)):
-            result = target - nums[i]
+        for index,i in enumerate(nums):
+            result = target - i
             if result in collection:
-                return [i, collection[result]]
-            else:
-                collection[nums[i]] = i
+                return [collection[result], index]
+            collection[i] = index
