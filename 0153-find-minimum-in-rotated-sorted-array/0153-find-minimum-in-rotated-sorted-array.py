@@ -7,7 +7,7 @@ class Solution:
         while left <= right:
             if nums[left] < nums[right]:
                 lowest = min(lowest,nums[left])
-                return lowest
+        
             
             mid = (right+left)//2
             lowest = min(nums[mid], lowest)
