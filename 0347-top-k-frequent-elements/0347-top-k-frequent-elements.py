@@ -13,7 +13,5 @@ class Solution:
             else:
                 collection[i] = 1
         
-        print(collection)
         sorted_collection = sorted(collection, key=lambda x:-collection[x])
-        print(sorted_collection)
         return sorted_collection[:k]
