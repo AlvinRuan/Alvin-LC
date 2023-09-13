@@ -13,16 +13,19 @@ class Solution:
             else:
                 collection[i] = 1
                 
-        
-        flipped = []
-        for i in collection:
-            flipped.append([collection[i],i])
-        
+        print(collection)
+        sorted_collection = sorted(collection, key=lambda x:(-collection[x]))
+        print(sorted_collection)
+        return sorted_collection[:k]
+        # flipped = []
+        # for i in collection:
+        #     flipped.append([collection[i],i])
+        # print(flipped)
         # sort array
-        sorted_array = sorted(flipped, reverse=True)
-        result = []
+#         sorted_array = sorted(flipped, key=lambda x:(-flipped[x]))
+#         result = []
         
-        for i in range(k):
-            result.append(sorted_array[i][1])
+#         for i in range(k):
+#             result.append(sorted_array[i][1])
         
-        return result
+#         return result
