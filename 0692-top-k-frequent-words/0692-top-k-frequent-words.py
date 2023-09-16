@@ -7,8 +7,6 @@ class Solution:
                 collection[i] += 1
             else:
                 collection[i] = 1
-        
-        sorted_collection = sorted(collection, key= lambda x:(-collection[x],x))
-            
-        return sorted_collection[:k]
-        
+                
+        sorted_collection = sorted(collection, key=lambda x:(-collection[x],x))
+        return(sorted_collection[:k])
