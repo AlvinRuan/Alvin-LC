@@ -18,7 +18,6 @@ class Solution:
                 nums1[current] = nums2[two_pointer]
                 two_pointer -= 1
             current -= 1
-        return nums1
             
         
         
