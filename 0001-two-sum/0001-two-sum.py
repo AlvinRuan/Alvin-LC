@@ -3,11 +3,11 @@ class Solution:
 
         collection =  {}
         
-        for i in range(0, len(nums)):
-            current = target - nums[i]
-            if current in collection:
-                return [collection[current], i]
+        for index, i in enumerate(nums):
+            result = target - i
+            if result in collection:
+                return [collection[result], index]
             else:
-                collection[nums[i]] = i
+                collection[i] = index 
         
             
