@@ -8,6 +8,8 @@ class Solution:
                 collection[i] += 1
             else:
                 collection[i] = 1
-                
-        sorted_collection = sorted(collection, key=lambda x:-collection[x])
+        print(collection)     
+        sorted_collection = sorted(collection, key=lambda i:-collection[i])
+        print(sorted_collection)
+        
         return sorted_collection[:k]
