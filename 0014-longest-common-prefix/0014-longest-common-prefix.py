@@ -2,9 +2,7 @@ class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         
         
-        sorted_str = sorted(strs, key=len)
-        
-        shortest = sorted_str[0]
+        shortest = min(strs, key=len)
         
         for i in strs:
             while shortest != "":
@@ -12,6 +10,5 @@ class Solution:
                     break
                 else:
                     shortest = shortest[:-1]
-                
-                
+        
         return shortest
