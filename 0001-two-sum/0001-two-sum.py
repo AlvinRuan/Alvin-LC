@@ -1,14 +1,14 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        collection = {}
         
+        collection = {}
+
         for i in range(len(nums)):
-            
-            result = target - nums[i]
-            
-            if nums[i] in collection:
-                
-                return [collection[nums[i]],i]
-            
+
+            opposite = target - nums[i]
+
+            if opposite in collection:
+                return [i, collection[opposite]]
+
             else:
-                collection[result] = i
+                collection[nums[i]] = i
