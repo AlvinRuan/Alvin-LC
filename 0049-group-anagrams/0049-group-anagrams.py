@@ -1,18 +1,22 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         
-        
-        collection = {}
-        
+        collection = {
+
+        }
+
         for i in strs:
-            sorted_i = "".join(sorted(i))
-            if sorted_i in collection:
-                collection[sorted_i].append(i)
+            alphabetized = ''.join(sorted(i))
+            if alphabetized in collection:
+                collection[alphabetized].append(i)
+                print(collection[alphabetized])
             else:
-                collection[sorted_i] = [i]
-        
-        
+                collection[alphabetized] = [i]
+
         result = []
+
         for i in collection:
             result.append(collection[i])
+
         return result
+            
