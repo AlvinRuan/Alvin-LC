@@ -1,24 +1,22 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        
+        collection = {}
 
-        hashset = {}
-        
-        if len(s) != len(t):
-            return False
-        
         for i in s:
-            if i in hashset:
-                hashset[i] += 1
+            if i in collection:
+                collection[i] += 1
             else:
-                hashset[i] = 1
-        for b in t:
-            if b in hashset:
-                hashset[b] -= 1
+                collection[i] = 1
+
+        for j in t:
+            if j in collection:
+                collection[j] -= 1
             else:
                 return False
-            
-        for i in hashset:
-            if hashset[i] != 0:
+
+        for i in collection:
+            if collection[i] != 0:
                 return False
-            
+        
         return True
