@@ -5,14 +5,14 @@ class Solution:
         longest = 0
         current_longest = 0
 
-        for i in set_version:
-            # check if its start of sequence
+        for i in nums:
             if i-1 not in set_version:
-                current_longest = 0
-                while (i + current_longest ) in set_version:
+                current_longest = 1
+                while i+1 in set_version:
                     current_longest += 1
-                longest = max(longest, current_longest)
-
+                    i+= 1
+                longest = max(current_longest, longest)
+        
         return longest
             
 
