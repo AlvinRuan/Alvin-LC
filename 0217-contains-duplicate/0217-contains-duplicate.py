@@ -1,6 +1,11 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
+        collection = {}
 
-        set_version = set(nums)
-
-        return len(set_version) != len(nums)
+        for i in nums:
+            if i in collection:
+                return True
+            else:
+                collection[i] = 1
+        
+        return False
