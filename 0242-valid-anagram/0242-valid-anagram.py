@@ -8,15 +8,15 @@ class Solution:
                 collection[i] += 1
             else:
                 collection[i] = 1
-
-        for j in t:
-            if j in collection:
-                collection[j] -= 1
-            else:
-                return False
-
-        for i in collection:
-            if collection[i] != 0:
-                return False
         
+        for j in t:
+            if j not in collection:
+                return False
+            else:
+                collection[j] -= 1
+        
+        for k in collection:
+            if collection[k] != 0:
+                return False
+
         return True
