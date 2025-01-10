@@ -10,7 +10,7 @@ class Solution:
             else:
                 collection[i] = 1
         
-        sorted_collection = sorted(collection, key=collection.get, reverse=True)
+        sorted_collection = sorted(collection, key=lambda x:-collection[x])
 
         return sorted_collection[0:k]
 
