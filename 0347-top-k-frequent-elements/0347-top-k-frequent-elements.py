@@ -9,8 +9,7 @@ class Solution:
             else:
                 collection[i] = 1
         
-        print(collection)
         sorted_collection = sorted(collection, key=collection.get, reverse=True)
-        print(sorted_collection)
+
 
         return sorted_collection[0:k]
