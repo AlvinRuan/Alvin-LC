@@ -18,9 +18,8 @@ class Solution:
                 while s[right] in current_string and left <= right:
                     left += 1
                     current_string = s[left:right]
-                current_string += s[right]
-            else:
-                current_string += s[right]
+                    
+            current_string += s[right]
                 
             longest_substring = max(len(current_string), longest_substring)
             right += 1
