@@ -8,8 +8,6 @@ class Solution:
 
         dummy = ListNode(0)
         current = dummy
-        current_1 = list1
-        current_2 = list2
 
         # get the 2 current values
         # if value is less than or equal
@@ -18,18 +16,18 @@ class Solution:
         elif list2 == None:
             return list1
 
-        while current_1 and current_2:
-            if current_1.val <= current_2.val:
-                current.next = current_1
-                current_1 = current_1.next
+        while list1 and list2:
+            if list1.val <= list2.val:
+                current.next = list1
+                list1 = list1.next
             else:
-                current.next = current_2
-                current_2 = current_2.next
+                current.next = list2
+                list2 = list2.next
             current = current.next
         # add to tail of list
-        if current_1 != None:
-            current.next = current_1
-        elif current_2 != None:
-            current.next = current_2
+        if list1 != None:
+            current.next = list1
+        elif list2 != None:
+            current.next = list2
 
         return dummy.next
