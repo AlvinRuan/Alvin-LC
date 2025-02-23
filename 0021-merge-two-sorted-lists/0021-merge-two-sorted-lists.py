@@ -11,10 +11,10 @@ class Solution:
 
         # get the 2 current values
         # if value is less than or equal
-        if list1 == None:
-            return list2
-        elif list2 == None:
-            return list1
+        # if list1 == None:
+        #     return list2
+        # elif list2 == None:
+        #     return list1
 
         while list1 and list2:
             if list1.val <= list2.val:
