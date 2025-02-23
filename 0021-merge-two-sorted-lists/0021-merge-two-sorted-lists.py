@@ -5,32 +5,31 @@
 #         self.next = next
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        
-        curr1 = list1
-        curr2 = list2
-        
-        
-        
-        result = ListNode()
-        curr = result
-        # Pointer to the current node in the merged linked list
-        
-        # Merge the two linked lists while they both have elements
-        while curr1 and curr2:
-            if curr1.val < curr2.val:
-                curr.next = curr1
-                curr1 = curr1.next
+
+        dummy = ListNode(0)
+        current = dummy
+        current_1 = list1
+        current_2 = list2
+
+        # get the 2 current values
+        # if value is less than or equal
+        if list1 == None:
+            return list2
+        elif list2 == None:
+            return list1
+
+        while current_1 and current_2:
+            if current_1.val <= current_2.val:
+                current.next = current_1
+                current_1 = current_1.next
             else:
-                curr.next = curr2
-                curr2 = curr2.next
-            curr = curr.next
-        
-        # If there are remaining elements in either of the linked lists, add them to the merged list
-        if curr1:
-            curr.next = curr1
-        if curr2:
-            curr.next = curr2
-        
-        return result.next
-                
-        
+                current.next = current_2
+                current_2 = current_2.next
+            current = current.next
+        # add to tail of list
+        if current_1 != None:
+            current.next = current_1
+        elif current_2 != None:
+            current.next = current_2
+
+        return dummy.next
