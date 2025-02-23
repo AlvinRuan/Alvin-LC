@@ -6,7 +6,7 @@
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
 
-        dummy = ListNode(0)
+        dummy = ListNode()
         current = dummy
 
         # get the 2 current values
